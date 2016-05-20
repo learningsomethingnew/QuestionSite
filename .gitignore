@@ -89,11 +89,20 @@ ENV/
 .ropeproject
 ### IPythonNotebook template
 # Temporary data
+/.direnv
 .ipynb_checkpoints/
 
 # Created by .ignore support plugin (hsz.mobi)
 
 .idea/
 .direnv/
+secrets.py
+
+.DS_Store
+.envrc
+__pycache__
+secrets.py
+db.sqlite3
+.DS_Store
 
 
