@@ -19,7 +19,6 @@ ALLOWED_HOSTS = []
 # Application definition
 
 INSTALLED_APPS = [
-    'stacked.apps.StackedConfig',
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
@@ -29,6 +28,7 @@ INSTALLED_APPS = [
     #custom apps
     'homepage.apps.HomepageConfig',
     'accounts.apps.AccountsConfig',
+    'stacked.apps.StackedConfig',
 ]
 
 MIDDLEWARE_CLASSES = [

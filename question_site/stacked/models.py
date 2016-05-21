@@ -1,9 +1,10 @@
 from django.db import models
 from django.contrib.auth.models import User
 
-
 """Model that tracks the
 questions asked from the user"""
+
+
 class Question(models.Model):
     # user information
     user_obj = models.ForeignKey(User)
@@ -21,6 +22,8 @@ class Question(models.Model):
 
 """Model that tracks the
 answers with a FK to user"""
+
+
 class Answer(models.Model):
     # user who is answering
     user_obj = models.ForeignKey(User)

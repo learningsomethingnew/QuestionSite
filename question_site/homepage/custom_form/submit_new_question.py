@@ -1,7 +1,8 @@
 from django import forms
 
-from question_site.stacked.models import Question
+from stacked.models import Question
 
-class NewQuestionForm(forms.ModelForm):
-    class Meta:
-        model = Question
+class NewQuestionForm(forms.Form):
+    question_asked = forms.CharField(max_length=255)
+    description = forms.TextInput()
+    keyword = forms.CharField(max_length=255)

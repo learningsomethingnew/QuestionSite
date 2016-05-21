@@ -6,5 +6,5 @@ from . import views
 app_name = 'stacked'
 
 urlpatterns = [
-    url(r'^questions/$', QuestionList.as_view()),
+    url(r'^list/$', QuestionList.as_view()),
 ]
