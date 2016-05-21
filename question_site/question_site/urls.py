@@ -4,4 +4,6 @@ from django.contrib import admin
 urlpatterns = [
     url(r'^stacked/', include('stacked.urls')),
     url(r'^admin/', admin.site.urls),
+    url(r'^accounts/', include('accounts.urls')),
+    url(r'^$', include('homepage.urls')),
 ]

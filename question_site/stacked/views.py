@@ -1,8 +1,8 @@
 from django.shortcuts import render
-
+from django.views.generic import ListView
+from .models import Question
 # Create your views here.
 from django.http import HttpResponse
 
-
-def index(request):
-    return HttpResponse("Hello, world. You're at the stacked index.")
+class QuestionList(ListView):
+    model = Question

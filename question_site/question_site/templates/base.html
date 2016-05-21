@@ -1,0 +1,12 @@
+<a href="/">Home</a>
+
+{% if user.is_authenticated %}
+            <p class="navbar-text pull-right">Welcome, {{ user.username }}. <a href="/"> Logout </a> </p>
+          {% else %}
+            <p class="navbar-text pull-right">Welcome, new user. Please <a href="/login/">login</a></p>
+          {% endif %}
+<hr>
+<body>
+{% block content %}
+{% endblock content %}
+</body>
