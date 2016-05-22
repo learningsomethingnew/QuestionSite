@@ -7,6 +7,7 @@ def login_page(request):
     return render(request, 'registration/login.html')
 
 def logout_page(request):
+    print("logout")
     logout(request)
     return HttpResponseRedirect('/')
 
