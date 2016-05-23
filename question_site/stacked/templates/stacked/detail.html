@@ -1,0 +1,35 @@
+{% extends "base/base.html" %}
+{% block content %}
+
+
+<h1>{{ question.question_asked }}</h1>
+
+<h4>{{ question.description }}</h4>
+
+<p>Keywords: {{ question.keyword }}</p>
+
+<p>Posted By: {{question.user_obj.username}} </p>
+-------------------------------------------------
+<h3>Community Answers</h3>
+{% for answer in responses %}
+    <p>
+        {{answer.score}} | {{answer.response}}
+        <form method="POST">
+        {% csrf_token %}
+        <input type="hidden" name='answer_id' value='{{ answer.id }}'/>
+        <input type="submit" name='upvote' value="UpVote"/>
+        <input type="submit" name='downvote'  value="DownVote"/>
+        </form>
+    </p>
+
+{% endfor %}
+
+{% if error_message %}<p><strong>{{ error_message }}</strong></p>{% endif %}
+
+<form action="/questions/{{question.id}}/" method="post">
+    {% csrf_token %}
+    {{ form.as_p }}
+    <input type="submit" name='answer'  value="Submit"/>
+</form>
+
+{% endblock %}

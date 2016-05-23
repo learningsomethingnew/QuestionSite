@@ -15,9 +15,11 @@ class Question(models.Model):
     # language input, user must put a keyword in.
     keyword = models.CharField(blank=False, max_length=255)
 
-    class Meta:
-        # display questions from most recent
-        ordering = ['id']
+    @staticmethod
+    def get_users_questions():
+        return Question.objects.order_by('-id')[:10]
+
+
 
 
 """Model that tracks the
@@ -27,6 +29,8 @@ answers with a FK to user"""
 class Answer(models.Model):
     # user who is answering
     user_obj = models.ForeignKey(User)
+    # question obj
+    question_obj = models.ForeignKey(Question)
     # the users answer
     response = models.TextField(blank=False)
     # score of answer
